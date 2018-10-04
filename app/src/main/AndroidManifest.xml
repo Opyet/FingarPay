@@ -10,19 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".ReceivePaymentActivity" />
-        <activity android:name=".SuccessReportActivity" />
-        <activity android:name=".FailedReportActivity" />
-        <activity android:name=".TransferActivity" />
-        <activity android:name=".HistoryTransactionActivity" />
+        <activity android:name=".HomeScreenActivity" android:label="Home"/>
+        <activity android:name=".ReceivePaymentActivity" android:label="Receive Payment" android:parentActivityName=".HomeScreenActivity"/>
+        <activity android:name=".SuccessReportActivity" android:label="Report" android:parentActivityName=".HomeScreenActivity"/>
+        <activity android:name=".FailedReportActivity" android:label="Report" android:parentActivityName=".HomeScreenActivity"/>
+        <activity android:name=".TransferActivity" android:label="Transfer Cash" android:parentActivityName=".HomeScreenActivity"/>
+        <activity android:name=".HistoryTransactionActivity" android:label="History" android:parentActivityName=".HomeScreenActivity"/>
         <activity android:name=".SetUpFingerScan"></activity>
     </application>
 
