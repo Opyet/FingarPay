@@ -40,7 +40,7 @@
             android:text="@string/bvn_bvn_phone_number" />
 
         <EditText
-            android:id="@+id/txtBVN_or_BVNPhoneNo"
+            android:id="@+id/edt_BVN_or_BVNPhoneNo"
             style="@style/inputText"
             android:hint="@string/placeholder_bvn_bvn_phone_number"
             android:inputType="number"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <EditText
-                android:id="@+id/txtMerchantFullname"
+                android:id="@+id/edt_merchantFullname"
                 style="@style/inputText"
                 android:hint="@string/placeholder_fullname"
                 android:inputType="text"
@@ -69,13 +69,11 @@
             android:text="@string/cac" />
 
         <EditText
-            android:id="@+id/txtCACRegNo"
+            android:id="@+id/edt_CACRegNo"
             style="@style/inputText"
             android:hint="@string/placeholder_cac"
             android:inputType="text"
             android:layout_marginBottom="8dp"/>
-
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -106,7 +104,7 @@
             android:text="@string/account_number" />
 
         <EditText
-            android:id="@+id/txtAccountNumber"
+            android:id="@+id/edt_accountNumber"
             style="@style/inputText"
             android:hint="@string/placeholder_account_number"
             android:inputType="number"
@@ -119,7 +117,7 @@
 
         <Spinner
             style="@style/inputText"
-            android:id="@+id/spBankSelect"
+            android:id="@+id/sp_BankSelect"
             android:layout_marginBottom="8dp"/>
 
 
@@ -140,7 +138,7 @@
                 android:layout_marginLeft="-3dp"
                 android:layout_marginTop="0dp">
                 <CheckBox
-                    android:id="@+id/chkTermsCondition"
+                    android:id="@+id/cb_TermsCondition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorAccent"/>
@@ -155,7 +153,7 @@
 
             <!--Submit-->
             <Button
-                android:id="@+id/bttnRegisterMerchant"
+                android:id="@+id/btn_RegisterMerchant"
                 style="@style/submitButton"
                 android:layout_alignParentRight="true"
                 android:text="@string/register"

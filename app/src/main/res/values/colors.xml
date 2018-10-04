@@ -13,7 +13,8 @@
 
     <color name="white">#ffffff</color>
 
-    <color name="successGreen">#4ad201</color>
+    <color name="successGreen">#339100</color>
     <color name="failedRed">#cf0700</color>
     <color name="errorOrange">#ec1800</color>
+    <color name="cautionOrange">#ff8c00</color>
 </resources>

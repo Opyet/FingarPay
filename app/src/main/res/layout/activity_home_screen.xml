@@ -33,7 +33,7 @@
                 android:textSize="16sp"
                 android:text="@string/welcome_message_hi"/>
             <TextView
-                android:id="@+id/txtMerchantFullname"
+                android:id="@+id/txt_MerchantFullname"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="6dp"
                 android:layout_height="wrap_content"
@@ -63,14 +63,13 @@
                 android:layout_gravity="center"
                 />
             <ImageView
-
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:src="@drawable/ic_coins"/>
         </LinearLayout>
         <TextView
-            android:id="@+id/txtReceivedTodayAmount"
+            android:id="@+id/txt_ReceivedTodayAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/amount_figures"
@@ -95,7 +94,7 @@
                 android:layout_gravity="center"
                 android:textSize="14sp"/>
             <TextView
-                android:id="@+id/txtTransactionCountDaily"
+                android:id="@+id/txt_TransactionCountDaily"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/count_number"
@@ -120,7 +119,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <LinearLayout
-                android:id="@+id/bttnReceivePay"
+                android:id="@+id/btn_ReceivePay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorAccent"
@@ -146,7 +145,7 @@
                     android:layout_marginTop="0dp"/>
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/bttnDisbursePay"
+                android:id="@+id/btn_CashTransfer"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:padding="10dp"

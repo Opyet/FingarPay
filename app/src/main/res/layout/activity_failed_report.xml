@@ -43,6 +43,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_transactionID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="7dp"
@@ -87,12 +88,13 @@
                 android:layout_gravity="center"
                 android:textAllCaps="true"
                 android:textStyle="bold"
-                android:text="@string/bank_not_reached"
+                android:text="@string/auth_error"
                 />
         </LinearLayout>
         <!--Back Home-->
         <Button
             style="@style/submitButton"
+            android:id="@+id/btn_BackToHome"
             android:text="@string/back_to_home"
             android:background="@color/colorAccent"
             android:textColor="@color/white"

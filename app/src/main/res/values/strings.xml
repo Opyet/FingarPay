@@ -25,6 +25,7 @@
     <string name="placeholder_account_number">Enter Account Number</string>
     <string name="terms_and_conds">I Agree to Terms and Conditions</string>
     <string name="account_setup">ACCOUNT SETUP</string>
+    <string name="account">ACCOUNT</string>
 
 
     <!--<string name="email_address">Email (Optional):</string>-->
@@ -43,7 +44,7 @@
 
     <!--Home Screen-->
     <string name="welcome_message_hi">Hi</string>
-    <string name="welcome_message_name">Becky</string>
+    <string name="welcome_message_name">Merchant fullname</string>
     <string name="total_received">Received Today</string>
     <string name="amount_figures">N40,000</string>
     <string name="count">Count: </string>
@@ -52,9 +53,15 @@
     <string name="cash_transfer">Cash\nTransfer</string>
     <string name="view_reports">VIEW REPORTS</string>
 
+    <string name="set_up_Access">Set up Access Authorization</string>
+    <string name="ensure_attached">Ensure your fingerprint capture device is attached</string>
+    <string name="place_finger">Place choice finger on device for capture</string>
+
+
 
     <!--Receive Activity -->
     <string name="product_service">Product/Service:</string>
+    <string name="userid_phone">User ID/ Phone Number:</string>
     <string name="placeholder_product_service">Enter Product or Service</string>
     <string name="amount">Amount:</string>
     <string name="placeholder_amount">Enter Amount</string>
@@ -87,6 +94,7 @@
     <string name="transaction_number">AGS1027930DG</string>
     <string name="transaction_not_completed">Transaction Not Completed!</string>
     <string name="network_error">Network Error</string>
+    <string name="auth_error">Authentication Error</string>
     <string name="bank_not_reached">Bank Not Reached</string>
     <string name="insufficient_funds">Insufficient Funds</string>
     <string name="back_to_home">Back to Home</string>
@@ -121,4 +129,7 @@
     <string name="card_validated">Card Validated</string>
     <string name="invalid_card">Invalid Card</string>
     <string name="this_week">This Week</string>
+
+
+    <string name="next">Approve Scan</string>
 </resources>
