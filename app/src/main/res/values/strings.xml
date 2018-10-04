@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">FingarPay</string>
+
+    <string name="customer">Customer Signup</string>
+    <string name="merchant">Merchant</string>
+    <!--Login-->
+    <string name="login">Login</string>
+    <string name="phone_label">Phone:</string>
+    <string name="password_label">Password:</string>
+    <string name="register_new_account">Not Signed up yet?</string>
+    <string name="phone_placeholder">Enter Phone Number</string>
+    <string name="pass_placeholder">Enter Password</string>
+    <string name="register">Register</string>
+
+    <!--RegisterActivity-->
+    <string name="merchant_reg">Merchant Registration</string>
+    <string name="merchant_name">Merchant Name:</string>
+    <string name="placeholder_surname">Surname</string>
+    <string name="placeholder_fullname">Merchant Full Name</string>
+    <string name="placeholder_othernames">Other names</string>
+    <string name="bvn_bvn_phone_number">BVN or Phone No(BVN):</string>
+    <string name="placeholder_bvn_bvn_phone_number">BVN or phone number attached to your BVN</string>
+    <string name="cac">CAC Reg No.:</string>
+    <string name="placeholder_cac">(Optional) Enter CAC Registration Number</string>
+    <string name="placeholder_account_number">Enter Account Number</string>
+    <string name="terms_and_conds">I Agree to Terms and Conditions</string>
+    <string name="account_setup">ACCOUNT SETUP</string>
+
+
+    <!--<string name="email_address">Email (Optional):</string>-->
+    <!--<string name="placeholder_email_address">Enter Email Address</string>-->
+    <!--<string name="password">Password:</string>-->
+    <!--<string name="placeholder_password">Enter Password</string>-->
+    <!--<string name="conf_password">Confirm Pass:</string>-->
+    <!--<string name="placeholder_conf_password">Password Again</string>-->
+    <!--<string name="have_account">Already Registered?</string>-->
+
+
+    <!--Buttons-->
+    <string name="submit">Submit</string>
+    <string name="title_activity_home_screen">Home Screen</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!--Home Screen-->
+    <string name="welcome_message_hi">Hi</string>
+    <string name="welcome_message_name">Becky</string>
+    <string name="total_received">Received Today</string>
+    <string name="amount_figures">N40,000</string>
+    <string name="count">Count: </string>
+    <string name="count_number">6</string>
+    <string name="receive_payment">Receive\nPayment</string>
+    <string name="cash_transfer">Cash\nTransfer</string>
+    <string name="view_reports">VIEW REPORTS</string>
+
+
+    <!--Receive Activity -->
+    <string name="product_service">Product/Service:</string>
+    <string name="placeholder_product_service">Enter Product or Service</string>
+    <string name="amount">Amount:</string>
+    <string name="placeholder_amount">Enter Amount</string>
+    <string name="bank">Bank:</string>
+    <string name="select_bank">Select Bank</string>
+    <string name="account_type">Account Type:</string>
+    <string name="phone">Account Phone Number:</string>
+    <string name="continue_txt">Continue</string>
+
+    <!--Banks-->
+    <string name="gtb">GT Bank</string>
+    <string name="access">Access Bank</string>
+    <string name="zenith">Zenith Bank</string>
+    <string name="first">First Bank</string>
+
+    <!--Account Types-->
+    <string name="savings">Savings</string>
+    <string name="current">Current</string>
+    <string name="fixed">Fixed</string>
+
+    <!--OTP Dialog-->
+    <string name="otp_notice">An OTP has been sent to your Mobile Number, Please Input Here:</string>
+    <string name="placeholder_otp">Enter OTP</string>
+
+    <!--Success/Failed Activities-->
+    <string name="success">Success!</string>
+    <string name="report">Report</string>
+    <string name="failed">Failed!</string>
+    <string name="transaction_id">Transaction ID: </string>
+    <string name="transaction_number">AGS1027930DG</string>
+    <string name="transaction_not_completed">Transaction Not Completed!</string>
+    <string name="network_error">Network Error</string>
+    <string name="bank_not_reached">Bank Not Reached</string>
+    <string name="insufficient_funds">Insufficient Funds</string>
+    <string name="back_to_home">Back to Home</string>
+
+    <!--Offline/Online-->
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+
+    <!--Disburse Screen-->
+    <string name="total_balance">Wallet Balance</string>
+    <string name="transfer">Transfer</string>
+    <string name="account_number">Account Number</string>
+    <string name="account_name">Account Name:</string>
+    <string name="placeholder_account_name">Firstname Surname</string>
+
+    <!--Customer Registration-->
+    <string name="card_number">CARD NUMBER:</string>
+    <string name="placeholder_card_number">Card Number</string>
+    <string name="card_holder">CARD HOLDER:</string>
+    <string name="placeholder_card_holder">Enter Name On Card</string>
+    <string name="expiry_date">VALID UNTIL:</string>
+    <string name="cvv">CVV</string>
+    <string name="placeholder_cvv">XXX</string>
+    <string name="last_three">Last three digit on your card\'s backside</string>
+    <string name="phone_validation_message">This phone number will be used for validating your registration</string>
+    <string name="card_month">MM</string>
+    <string name="card_year">YY</string>
+    <string name="slash">/</string>
+    <string name="register_card">Register Card</string>
+    <string name="placeholder_card_phone">Enter Account Phone No</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="card_validated">Card Validated</string>
+    <string name="invalid_card">Invalid Card</string>
+    <string name="this_week">This Week</string>
+</resources>

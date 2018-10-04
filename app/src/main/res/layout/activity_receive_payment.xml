@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".ReceivePaymentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <!--Offline/Online Mode-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+            <Switch
+                android:id="@+id/swtInternetMode"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:text="@string/online"
+                android:textColor="@color/textDarkGrey"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"/>
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textLightGrey"
+                android:text="@string/offline"
+                android:layout_marginLeft="10dp"/>-->
+        </LinearLayout>
+
+        <!--Receive Payment form-->
+        <TextView
+            style="@style/formLabel"
+            android:layout_gravity="top"
+            android:text="@string/product_service"            />
+        <EditText
+            style="@style/inputText"
+            android:hint="@string/placeholder_product_service"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"/>
+
+        <!--Amount Input-->
+        <TextView
+            style="@style/formLabel"
+            android:text="@string/amount" />
+
+        <EditText
+            android:id="@+id/txtAmount"
+            style="@style/inputText"
+            android:hint="@string/placeholder_amount"
+            android:inputType="number"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Bank Input-->
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_weight="1"
+                 android:layout_marginRight="10dp"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical">
+                 <TextView
+                     style="@style/formLabel"
+                     android:text="@string/bank" />
+
+                 <Spinner
+                     android:id="@+id/cmbBanks"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="1dp"
+                     android:layoutMode="opticalBounds"
+                     android:saveEnabled="true"
+                     android:paddingTop="2dp"
+                     android:spinnerMode="dialog"
+                     android:nextFocusDown="@+id/txtAccountNo"
+                     android:imeOptions="actionNext"/>
+
+             </LinearLayout>
+
+             &lt;!&ndash;Account Input&ndash;&gt;
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_weight="1"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical">
+                 <TextView
+                     style="@style/formLabel"
+                     android:text="@string/account_type" />
+
+                 <EditText
+                     style="@style/inputText"
+                     android:hint="@string/savings"
+                     android:inputType="textPassword"
+                     android:layout_marginBottom="8dp"/>
+             </LinearLayout>-->
+        </LinearLayout>
+        <!--Phone Input-->
+        <TextView
+            style="@style/formLabel"
+            android:text="@string/phone" />
+
+        <EditText
+            android:id="@+id/txtMobileNo"
+            style="@style/inputText"
+            android:hint="@string/phone_placeholder"
+            android:inputType="phone"
+            android:layout_marginBottom="8dp"/>
+
+        <!--Submit-->
+        <Button
+            android:id="@+id/bttnContinue"
+            style="@style/submitButton"
+            android:text="@string/continue_txt"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:drawableRight="@drawable/ic_arrow_alt_circle_right"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/rect"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

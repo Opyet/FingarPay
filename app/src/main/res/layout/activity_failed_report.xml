@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".FailedReportActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/failed"
+            android:textAllCaps="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/failedRed"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="40sp"/>
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_baseline_error_outline_24px"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transaction_id"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:textStyle="bold"
+                android:text="@string/transaction_number"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_height="1dp"
+            android:background="@color/textLightGrey"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textAllCaps="true"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/failedRed"
+            android:text="@string/transaction_not_completed"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_close_24px"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:text="@string/bank_not_reached"
+                />
+        </LinearLayout>
+        <!--Back Home-->
+        <Button
+            style="@style/submitButton"
+            android:text="@string/back_to_home"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_white_24px"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:onClick="backHome"/>
+    </LinearLayout>
+
+</LinearLayout>
