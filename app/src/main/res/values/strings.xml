@@ -58,7 +58,6 @@
     <string name="place_finger">Place choice finger on device for capture</string>
 
 
-
     <!--Receive Activity -->
     <string name="product_service">Product/Service:</string>
     <string name="userid_phone">User ID/ Phone Number:</string>
@@ -132,4 +131,9 @@
 
 
     <string name="next">Approve Scan</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

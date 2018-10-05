@@ -9,22 +9,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".RegisterActivity">
+        <activity
+            android:name=".RegisterActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeScreenActivity" android:label="Home"/>
-        <activity android:name=".ReceivePaymentActivity" android:label="Receive Payment" android:parentActivityName=".HomeScreenActivity"/>
-        <activity android:name=".SuccessReportActivity" android:label="Report" android:parentActivityName=".HomeScreenActivity"/>
-        <activity android:name=".FailedReportActivity" android:label="Report" android:parentActivityName=".HomeScreenActivity"/>
-        <activity android:name=".TransferActivity" android:label="Transfer Cash" android:parentActivityName=".HomeScreenActivity"/>
-        <activity android:name=".HistoryTransactionActivity" android:label="History" android:parentActivityName=".HomeScreenActivity"/>
-        <activity android:name=".SetUpFingerScan"></activity>
+        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".HomeScreenActivity"
+            android:label="Home" />
+        <activity
+            android:name=".ReceivePaymentActivity"
+            android:label="Receive Payment"
+            android:parentActivityName=".HomeScreenActivity" />
+        <activity
+            android:name=".SuccessReportActivity"
+            android:label="Report"
+            android:parentActivityName=".HomeScreenActivity" />
+        <activity
+            android:name=".FailedReportActivity"
+            android:label="Report"
+            android:parentActivityName=".HomeScreenActivity" />
+        <activity
+            android:name=".TransferActivity"
+            android:label="Transfer Cash"
+            android:parentActivityName=".HomeScreenActivity" />
+        <activity
+            android:name=".HistoryTransactionActivity"
+            android:label="History"
+            android:parentActivityName=".HomeScreenActivity" />
+        <activity android:name=".SetUpFingerScan" />
     </application>
 
 </manifest>
