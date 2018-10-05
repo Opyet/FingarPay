@@ -6,165 +6,170 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="match_parent">
 
-        <!--Header-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
-                android:src="@drawable/ic_baseline_account_circle_24px"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="true"
-                android:textColor="@color/textLightGrey"
-                android:textStyle="bold"
-                android:layout_marginLeft="9dp"
-                android:text="@string/merchant_reg"
-                android:textSize="15sp"
-                android:layout_marginBottom="15dp"/>
-        </LinearLayout>
-
-        <!--BVN Input-->
-        <TextView
-            style="@style/formLabel"
-            android:text="@string/bvn_bvn_phone_number" />
-
-        <EditText
-            android:id="@+id/edt_BVN_or_BVNPhoneNo"
-            style="@style/inputText"
-            android:hint="@string/placeholder_bvn_bvn_phone_number"
-            android:inputType="number"
-            android:layout_marginBottom="8dp"/>
-
-        <!--Merchant name Input-->
-        <TextView
-            style="@style/formLabel"
-            android:layout_gravity="top"
-            android:text="@string/merchant_name"            />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <EditText
-                android:id="@+id/edt_merchantFullname"
-                style="@style/inputText"
-                android:hint="@string/placeholder_fullname"
-                android:inputType="text"
-                android:layout_marginBottom="8dp"/>
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <!--CAC Input-->
-        <TextView
-            style="@style/formLabel"
-            android:text="@string/cac" />
-
-        <EditText
-            android:id="@+id/edt_CACRegNo"
-            style="@style/inputText"
-            android:hint="@string/placeholder_cac"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="18dp"
-                android:layout_marginTop="2dp"
-                android:src="@drawable/ic_credit_card_grey"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/account_setup"
-                android:textColor="@color/textLightGrey"
-                android:textSize="15sp"
-                android:textAllCaps="true"
-                android:layout_marginLeft="9dp"
-                android:layout_marginBottom="15dp"/>
-        </LinearLayout>
-
-        <!--Account Number-->
-        <TextView
-            style="@style/formLabel"
-            android:text="@string/account_number" />
-
-        <EditText
-            android:id="@+id/edt_accountNumber"
-            style="@style/inputText"
-            android:hint="@string/placeholder_account_number"
-            android:inputType="number"
-            android:layout_marginBottom="8dp"/>
-
-        <!--Bank-->
-        <TextView
-            style="@style/formLabel"
-            android:text="@string/select_bank" />
-
-        <Spinner
-            style="@style/inputText"
-            android:id="@+id/sp_BankSelect"
-            android:layout_marginBottom="8dp"/>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="-5dp"
-            android:orientation="horizontal">
-
-            <!--RegisterActivity Section-->
+            <!--Header-->
             <LinearLayout
-                android:id="@+id/login_alternative"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:orientation="horizontal"
-                android:layout_marginLeft="-3dp"
-                android:layout_marginTop="0dp">
-                <CheckBox
-                    android:id="@+id/cb_TermsCondition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"/>
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/ic_baseline_account_circle_24px"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:text="@string/terms_and_conds" />
-
-
+                    android:textAllCaps="true"
+                    android:textColor="@color/textLightGrey"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="9dp"
+                    android:text="@string/merchant_reg"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="15dp"/>
             </LinearLayout>
 
-            <!--Submit-->
-            <Button
-                android:id="@+id/btn_RegisterMerchant"
-                style="@style/submitButton"
-                android:layout_alignParentRight="true"
-                android:text="@string/register"
-                android:background="@color/colorAccent"
-                android:drawableLeft="@drawable/ic_baseline_store_24px"
-                android:drawablePadding="6dp"
-                android:textColor="@color/white"
-                android:layout_gravity="end"/>
+            <!--BVN Input-->
+            <TextView
+                style="@style/formLabel"
+                android:text="@string/bvn_bvn_phone_number" />
 
-        </RelativeLayout>
-    </LinearLayout>
+            <EditText
+                android:id="@+id/edt_BVN_or_BVNPhoneNo"
+                style="@style/inputText"
+                android:hint="@string/placeholder_bvn_bvn_phone_number"
+                android:inputType="number"
+                android:layout_marginBottom="8dp"/>
+
+            <!--Merchant name Input-->
+            <TextView
+                style="@style/formLabel"
+                android:layout_gravity="top"
+                android:text="@string/merchant_name"            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edt_merchantFullname"
+                    style="@style/inputText"
+                    android:hint="@string/placeholder_fullname"
+                    android:inputType="text"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+
+            <!--CAC Input-->
+            <TextView
+                style="@style/formLabel"
+                android:text="@string/cac" />
+
+            <EditText
+                android:id="@+id/edt_CACRegNo"
+                style="@style/inputText"
+                android:hint="@string/placeholder_cac"
+                android:inputType="text"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_credit_card_grey"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/account_setup"
+                    android:textColor="@color/textLightGrey"
+                    android:textSize="15sp"
+                    android:textAllCaps="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginBottom="15dp"/>
+            </LinearLayout>
+
+            <!--Account Number-->
+            <TextView
+                style="@style/formLabel"
+                android:text="@string/account_number" />
+
+            <EditText
+                android:id="@+id/edt_accountNumber"
+                style="@style/inputText"
+                android:hint="@string/placeholder_account_number"
+                android:inputType="number"
+                android:layout_marginBottom="8dp"/>
+
+            <!--Bank-->
+            <TextView
+                style="@style/formLabel"
+                android:text="@string/select_bank" />
+
+            <Spinner
+                style="@style/inputText"
+                android:id="@+id/sp_BankSelect"
+                android:layout_marginBottom="8dp"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="-5dp"
+                android:orientation="horizontal">
+
+                <!--RegisterActivity Section-->
+                <LinearLayout
+                    android:id="@+id/login_alternative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="-3dp"
+                    android:layout_marginTop="0dp">
+                    <CheckBox
+                        android:id="@+id/cb_TermsCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="@string/terms_and_conds" />
+
+
+                </LinearLayout>
+
+                <!--Submit-->
+                <Button
+                    android:id="@+id/btn_RegisterMerchant"
+                    style="@style/submitButton"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/register"
+                    android:background="@color/colorAccent"
+                    android:drawableLeft="@drawable/ic_baseline_store_24px"
+                    android:drawablePadding="6dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="end"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp"

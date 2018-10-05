@@ -24,10 +24,10 @@
             android:textSize="40sp"/>
 
         <ImageView
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/ic_baseline_error_outline_24px"/>
 
         <LinearLayout

@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent();
-                myIntent.setClass(getApplicationContext(),SetUpFingerScan.class);
+                myIntent.setClass(getApplicationContext(),MapsAddressActivity.class);
 
                 startActivity(myIntent);
             }

@@ -11,7 +11,6 @@ public class TransferActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme2);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
 

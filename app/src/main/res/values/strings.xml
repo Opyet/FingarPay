@@ -54,9 +54,13 @@
     <string name="view_reports">VIEW REPORTS</string>
 
     <string name="set_up_Access">Set up Access Authorization</string>
+    <string name="Access">Access Authorization</string>
+    <string name="pass_login">Pin Login</string>
+    <string name="Forgot_pass">Forgot Pin?</string>
+    <string name="exit">Exit</string>
+    <string name="enter_pin">Enter Pin:</string>
     <string name="ensure_attached">Ensure your fingerprint capture device is attached</string>
     <string name="place_finger">Place choice finger on device for capture</string>
-
 
 
     <!--Receive Activity -->
@@ -132,4 +136,7 @@
 
 
     <string name="next">Approve Scan</string>
+    <string name="scan_page_info">Scan Page Info</string>
+    <string name="title_activity_map_adress">MapAdressActivity</string>
+    <string name="title_activity_maps_address">Validate Business Address</string>
 </resources>
