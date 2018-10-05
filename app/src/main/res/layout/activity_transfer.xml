@@ -8,140 +8,145 @@
     android:id="@+id/layout_root"
     tools:context=".TransferActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="30dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/ic_wallet"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/total_balance"
-                android:textStyle="bold"
-                android:textColor="@color/textLightGrey"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:background="@drawable/border_text"
-                android:padding="7dp"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/txt_WalletBalance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/amount_figures"
-            android:textColor="@color/textDarkGrey"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:textStyle="bold"
-            android:layout_marginTop="-6dp"
-            android:textSize="40sp"/>
-
-
-        <!--Receive Payment form-->
-        <TextView
-            style="@style/formLabel2"
-            android:layout_gravity="top"
-            android:text="@string/product_service"            />
-        <EditText
-            android:id="@+id/edt_product"
-            style="@style/inputText"
-            android:hint="@string/placeholder_product_service"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
-
-        <!--Amount Input-->
-        <TextView
-            style="@style/formLabel2"
-            android:text="@string/amount" />
-
-        <EditText
-            android:id="@+id/edt_amount"
-            style="@style/inputText"
-            android:hint="@string/placeholder_amount"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="8dp"/>
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <!--Bank Input-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    style="@style/formLabel2"
-                    android:text="@string/bank" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30dp">
 
-                <Spinner
-                    android:id="@+id/sp_BankSelect"
-                    style="@style/inputText"
-                    android:hint="@string/select_bank"
-                    android:inputType="text"
-                    android:layout_marginBottom="8dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/ic_wallet"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_balance"
+                    android:textStyle="bold"
+                    android:textColor="@color/textLightGrey"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:background="@drawable/border_text"
+                    android:padding="7dp"
+                    android:layout_gravity="center"
+                    />
             </LinearLayout>
 
-            <!--Account Input-->
+            <TextView
+                android:id="@+id/txt_WalletBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_figures"
+                android:textColor="@color/textDarkGrey"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="-6dp"
+                android:textSize="40sp"/>
+
+
+            <!--Receive Payment form-->
+            <TextView
+                style="@style/formLabel2"
+                android:layout_gravity="top"
+                android:text="@string/product_service"            />
+            <EditText
+                android:id="@+id/edt_product"
+                style="@style/inputText"
+                android:hint="@string/placeholder_product_service"
+                android:inputType="text"
+                android:layout_marginBottom="8dp"/>
+
+            <!--Amount Input-->
+            <TextView
+                style="@style/formLabel2"
+                android:text="@string/amount" />
+
+            <EditText
+                android:id="@+id/edt_amount"
+                style="@style/inputText"
+                android:hint="@string/placeholder_amount"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="8dp"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    style="@style/formLabel2"
-                    android:text="@string/account_number" />
+                android:orientation="horizontal">
+                <!--Bank Input-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/formLabel2"
+                        android:text="@string/bank" />
 
-                <EditText
-                    android:id="@+id/edt_accountNumber"
-                    style="@style/inputText"
-                    android:hint="@string/savings"
-                    android:inputType="numberSigned"
-                    android:layout_marginBottom="8dp"/>
+                    <Spinner
+                        android:id="@+id/sp_BankSelect"
+                        style="@style/inputText"
+                        android:hint="@string/select_bank"
+                        android:inputType="text"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+                <!--Account Input-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/formLabel2"
+                        android:text="@string/account_number" />
+
+                    <EditText
+                        android:id="@+id/edt_accountNumber"
+                        style="@style/inputText"
+                        android:hint="@string/savings"
+                        android:inputType="numberSigned"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
             </LinearLayout>
+
+            <!--Account name Input-->
+            <TextView
+                style="@style/formLabel2"
+                android:text="@string/account_name" />
+
+            <EditText
+                android:id="@+id/edt_accountName"
+                style="@style/inputText"
+                android:hint="@string/placeholder_account_name"
+                android:inputType="text"
+                android:layout_marginBottom="8dp"/>
+
+            <!--Submit-->
+            <Button
+                android:id="@+id/btn_transfer"
+                style="@style/submitButton"
+                android:text="@string/transfer"
+                android:textColor="@color/white"
+                android:background="@color/colorAccent2"
+                android:drawableRight="@drawable/ic_arrow_alt_circle_right"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"/>
+
         </LinearLayout>
-
-        <!--Account name Input-->
-        <TextView
-            style="@style/formLabel2"
-            android:text="@string/account_name" />
-
-        <EditText
-            android:id="@+id/edt_accountName"
-            style="@style/inputText"
-            android:hint="@string/placeholder_account_name"
-            android:inputType="text"
-            android:layout_marginBottom="8dp"/>
-
-        <!--Submit-->
-        <Button
-            android:id="@+id/btn_transfer"
-            style="@style/submitButton"
-            android:text="@string/transfer"
-            android:textColor="@color/white"
-            android:background="@color/colorAccent2"
-            android:drawableRight="@drawable/ic_arrow_alt_circle_right"
-            android:drawablePadding="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="right"/>
-
-    </LinearLayout>
+    </ScrollView>
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp"
