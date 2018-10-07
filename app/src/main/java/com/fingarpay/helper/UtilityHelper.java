@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.UUID;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -203,6 +204,16 @@ public class UtilityHelper {
 		  
 	  }
 
+	public static String createTransactionID(){
+		try {
+
+			return UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
+		}catch(Exception ex){
+
+
+		}
+		return  null;
+	}
 	//Converts image to grayscale (NEW)
 	    public Bitmap toGrayscale(byte[] mImageBuffer,int mImageWidth,int mImageHeight)
 	    {        

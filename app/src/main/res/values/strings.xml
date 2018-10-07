@@ -18,9 +18,9 @@
     <string name="placeholder_surname">Surname</string>
     <string name="placeholder_fullname">Merchant Full Name</string>
     <string name="placeholder_othernames">Other names</string>
-    <string name="bvn_bvn_phone_number">BVN or Phone No(BVN):</string>
-    <string name="placeholder_bvn_bvn_phone_number">BVN or phone number attached to your BVN</string>
-    <string name="cac">CAC Reg No.:</string>
+    <string name="bvn_bvn_phone_number">Your BVN:</string>
+    <string name="placeholder_bvn_bvn_phone_number">Enter your BVN</string>
+    <string name="cac">Rc. No.:</string>
     <string name="placeholder_cac">(Optional) Enter CAC Registration Number</string>
     <string name="placeholder_account_number">Enter Account Number</string>
     <string name="terms_and_conds">I Agree to Terms and Conditions</string>
@@ -136,7 +136,7 @@
 
 
     <string name="next">Approve Scan</string>
-    <string name="scan_page_info">Scan Page Info</string>
+    <string name="scan_page_info">Place finger on Device to Login</string>
     <string name="title_activity_map_adress">MapAdressActivity</string>
     <string name="title_activity_maps_address">Validate Business Address</string>
 </resources>

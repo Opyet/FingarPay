@@ -48,7 +48,9 @@
                 style="@style/inputText"
                 android:hint="@string/placeholder_bvn_bvn_phone_number"
                 android:inputType="number"
-                android:layout_marginBottom="8dp"/>
+                android:maxLength="11"
+                android:layout_marginBottom="8dp"
+               />
 
             <!--Merchant name Input-->
             <TextView
@@ -64,7 +66,8 @@
                     style="@style/inputText"
                     android:hint="@string/placeholder_fullname"
                     android:inputType="text"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="8dp"
+                    android:enabled="false"/>
             </LinearLayout>
 
             <!--CAC Input-->
@@ -102,6 +105,15 @@
                     android:layout_marginBottom="15dp"/>
             </LinearLayout>
 
+            <!--Bank-->
+            <TextView
+                style="@style/formLabel"
+                android:text="@string/select_bank" />
+
+            <Spinner
+                style="@style/inputText"
+                android:id="@+id/sp_BankSelect"
+                android:layout_marginBottom="8dp"/>
             <!--Account Number-->
             <TextView
                 style="@style/formLabel"
@@ -112,17 +124,10 @@
                 style="@style/inputText"
                 android:hint="@string/placeholder_account_number"
                 android:inputType="number"
+                android:maxLength="10"
                 android:layout_marginBottom="8dp"/>
 
-            <!--Bank-->
-            <TextView
-                style="@style/formLabel"
-                android:text="@string/select_bank" />
 
-            <Spinner
-                style="@style/inputText"
-                android:id="@+id/sp_BankSelect"
-                android:layout_marginBottom="8dp"/>
 
 
             <RelativeLayout

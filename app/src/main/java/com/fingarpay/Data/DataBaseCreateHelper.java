@@ -14,6 +14,8 @@ import android.util.Log;
 
 import com.fingarpay.helper.BanksInfo;
 import com.fingarpay.helper.MyCardInfo;
+import com.fingarpay.helper.StaffDetailsInfo;
+import com.fingarpay.helper.StaffFingerInfo;
 import com.fingarpay.helper.TransferFundsInfo;
 
 import java.io.File;
@@ -59,7 +61,7 @@ public class DataBaseCreateHelper extends SQLiteOpenHelper {
 
     //static string ConnectionString = new classDAL().ConnectToSqlLiteDB();
     //static SQLiteConnection conn = new SQLiteConnection(ConnectionString);
-    private static String DATABASE_NAME = "mmPayPlusDB.db";
+    private static String DATABASE_NAME = "fingerPayDB.db";
     private String TAG = "DatabaseHelperClass";
     // Student table TABLE_TransferFunds
     private static String TABLE_TransferFunds = "TransferFundsTbl";
@@ -83,12 +85,34 @@ public class DataBaseCreateHelper extends SQLiteOpenHelper {
     private static String KEY_MyCardName = "MyCardName";
 
 
+    private static String TABLE_FingerStaff = "FingersLoginStaffTbl";
+    private static String TABLE_StaffDetails = "StaffDetailsTbl";
+
+    //StaffDetails column Names
+    private static String KEY_StaffDetailsId = "Id";
+    private static String KEY_IsAdmin = "IsAdmin";
+    private static String KEY_StaffCode = "StaffCode";
+    private static String KEY_Mobile = "Mobile";
+
+    //FingerStaff column Names
+    private static String KEY_FingerSId = "Id";
+    private static String KEY_FingerStaffId = "StaffId";
+    private static String KEY_RFIndex = "RFIndex";
+    private static String KEY_RFThumb = "RFThumb";
+
+    private static String KEY_LFIndex = "LFIndex";
+    private static String KEY_LFThumb = "LFThumb";
+    private static String KEY_IsSent = "IsSent";
+
+
     //Hymms column Names
     private static String KEY_BroadcastId = "Id";
     private static String KEY_BroadcastDetails = "BroadcastDetails";
     private static String KEY_SenderName = "SenderName";
     private static String KEY_SenderFullName = "SenderFullName";
 
+    private static String KEY_OtherNames = "OtherNames";
+    private static String KEY_Surname = "Surname";
 
     //Banks column Names
     private static String KEY_BanksId = "Id";
@@ -350,6 +374,30 @@ public class DataBaseCreateHelper extends SQLiteOpenHelper {
             db.execSQL(CREATE_Table_MyCards);
         } catch (Exception e) {
             Log.e(TABLE_MyCards, e.getMessage() + e.getStackTrace());
+        }
+
+
+        try {
+            //create Missed Calls Table
+            String CREATE_StaffDetails_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_StaffDetails + "("
+                    + KEY_StaffDetailsId + " INTEGER PRIMARY KEY," + KEY_StaffCode + " TEXT,"
+                    + KEY_Surname + " TEXT," + KEY_OtherNames + " TEXT,"
+                    + KEY_Mobile + " TEXT," + KEY_IsAdmin + " TEXT," +  KEY_DateCreated + " TEXT" + ")";
+            db.execSQL(CREATE_StaffDetails_TABLE);
+        } catch (Exception e) {
+            Log.e(TABLE_StaffDetails , e.getMessage() + e.getStackTrace());
+        }
+
+        try {
+            //create Missed Calls Table
+            String CREATE_FingerStaff_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_FingerStaff + "("
+                    + KEY_FingerSId + " INTEGER PRIMARY KEY," + KEY_FingerStaffId + " INT,"
+                    + KEY_RFThumb + " BLOB," + KEY_RFIndex + " BLOB,"
+                    + KEY_LFThumb + " BLOB," + KEY_LFIndex + " BLOB,"
+                    +  KEY_DateCreated + " TEXT" + ")";
+            db.execSQL(CREATE_FingerStaff_TABLE);
+        } catch (Exception e) {
+            Log.e(TABLE_FingerStaff , e.getMessage() + e.getStackTrace());
         }
 
     }
@@ -928,6 +976,337 @@ public class DataBaseCreateHelper extends SQLiteOpenHelper {
      }
 
 
- 
+
+
+
+    /**
+     * All CRUD(Create, Read, Update, Delete) Operations
+     */
+
+    // Adding new contact
+    public int StaffDetailsAdd(StaffDetailsInfo sdInfo) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put(KEY_Surname, sdInfo.getSurname().toString()); // StudentAttendanceInfo Name
+            values.put(KEY_OtherNames, sdInfo.getOtherNames().toString()); // StudentAttendanceInfo Name
+            values.put(KEY_Mobile, sdInfo.getMobile().toString()); //
+            // values.put(KEY_Discipline, sdInfo.getDiscipline().toString()); // StudentAttendanceInfo Name
+            values.put(KEY_DateCreated, getDateTime()); //
+            values.put(KEY_IsAdmin, sdInfo.getIsAdmin());
+            values.put(KEY_StaffCode, sdInfo.getStaffCode().toString());
+
+            // Inserting Row
+            long id= db.insert(TABLE_StaffDetails, null, values);
+            if (db.isOpen())
+            {
+                //db.close();
+            }
+            return (int)id;
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return -1;
+    }
+
+    // Getting single contact
+    public  StaffDetailsInfo StaffDetailsByIdGet(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor =null;
+        try {
+
+            cursor = db.query(TABLE_StaffDetails, null,KEY_StaffDetailsId + "=?",
+                    new String[] { String.valueOf(id) }, null, null, null);
+            if (cursor != null)
+            {
+                cursor.moveToFirst();
+
+                StaffDetailsInfo contact =StaffDetailsParse(cursor);
+                cursor.close();
+                return contact;
+            }
+            return null;
+        } finally {
+            //db.close();
+            if (cursor !=null) {
+                cursor.close();
+            }
+        }
+    }
+
+    // Getting single contact
+    public  StaffDetailsInfo StaffDetailsByStaffCodeGet(String staffCode) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor =null;
+        try {
+            cursor = db.query(TABLE_StaffDetails, null,KEY_StaffCode + "=?",
+                    new String[] { String.valueOf(staffCode) }, null, null, null);
+            if (cursor != null)
+            {
+                cursor.moveToFirst();
+                if (cursor.getCount()>0) {
+                    StaffDetailsInfo contact =StaffDetailsParse(cursor);
+                    return contact;
+                }
+                cursor.close();
+            }
+
+
+        } catch (Exception e) {
+            //db.close();
+            if (cursor !=null) {
+                cursor.close();
+            }
+        }
+        return null;
+    }
+    private StaffDetailsInfo StaffDetailsParse(Cursor cursor) {
+
+        StaffDetailsInfo SmartGuyInfo = new StaffDetailsInfo();
+
+
+        SmartGuyInfo.setId(cursor.getInt(cursor.getColumnIndex(KEY_StaffDetailsId)));
+        SmartGuyInfo.setSurname(cursor.getString(cursor.getColumnIndex(KEY_Surname)));
+        SmartGuyInfo.setOtherNames(cursor.getString(cursor.getColumnIndex(KEY_OtherNames)));
+        SmartGuyInfo.setStaffCode(cursor.getString(cursor.getColumnIndex(KEY_StaffCode)));
+        SmartGuyInfo.setMobile(cursor.getString(cursor.getColumnIndex(KEY_Mobile)));
+        SmartGuyInfo.setIsAdmin(cursor.getInt(cursor.getColumnIndex(KEY_IsAdmin)));
+        //SmartGuyInfo.setDiscipline(cursor.getString(cursor.getColumnIndex(KEY_Discipline)));
+        SmartGuyInfo.setDateCreated(cursor.getString(cursor.getColumnIndex(KEY_DateCreated)));
+        return SmartGuyInfo;
+
+    }
+    // Getting All Contacts
+    public List<StaffDetailsInfo> StaffDetailsList() {
+        List<StaffDetailsInfo> contactList = new ArrayList<StaffDetailsInfo>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_StaffDetails + " order by " +  KEY_Surname + " asc";
+        //
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor !=null) {
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    StaffDetailsInfo contact =StaffDetailsParse(cursor);
+                    // Adding contact to list
+                    contactList.add(contact);
+                } while (cursor.moveToNext());
+                cursor.close();
+            }
+
+        }
+
+        // return contact list
+        return contactList;
+    }
+
+    // Updating single contact
+    public int StaffDetailsUpdate(StaffDetailsInfo sdInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_Surname, sdInfo.getSurname()); // StudentAttendanceInfo Name
+        values.put(KEY_OtherNames, sdInfo.getOtherNames()); // StudentAttendanceInfo Name
+        values.put(KEY_Mobile, sdInfo.getMobile()); //
+        values.put(KEY_StaffDetailsId, sdInfo.getId()); // StudentAttendanceInfo Name
+        values.put(KEY_IsAdmin, sdInfo.getIsAdmin());
+        values.put(KEY_StaffCode, sdInfo.getStaffCode());
+        // updating row
+        return db.update(TABLE_StaffDetails, values, KEY_StaffDetailsId + " = ?",
+                new String[] { String.valueOf(sdInfo.getId()) });
+    }
+
+    // Deleting single contact
+    public void StaffDetailsDelete(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_StaffDetails, KEY_StaffDetailsId + " = ?",
+                new String[] { String.valueOf(id) });
+        //db.close();
+    }
+
+    // Getting contacts Count
+    public int StaffDetailsCount() {
+        String countQuery = "SELECT  Count(*) FROM " + TABLE_StaffDetails;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        if (cursor != null){
+            {
+                cursor.moveToFirst();
+
+                int cnt=cursor.getInt(0);
+                cursor.close();
+
+                // return count
+                return cnt;
+            }
+        }
+        return 0;
+    }
+
+
+    /**
+     * All CRUD(Create, Read, Update, Delete) Operations
+     */
+
+    // Adding new contact
+    public int FingerStaffAdd(StaffFingerInfo sdInfo) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            //values.put(KEY_FingerSId, sdInfo.getId());
+            values.put(KEY_FingerStaffId, sdInfo.getStaffId()); // StudentAttendanceInfo Name
+            values.put(KEY_RFThumb, sdInfo.getRFThumb()); // StudentAttendanceInfo Name
+            values.put(KEY_RFIndex, sdInfo.getRFIndex()); //
+
+            values.put(KEY_LFThumb, sdInfo.getLFThumb()); // StudentAttendanceInfo Name
+            values.put(KEY_LFIndex, sdInfo.getLFIndex()); //
+            values.put(KEY_DateCreated, getDateTime()); //
+
+            // Inserting Row
+            long id=db.insert(TABLE_FingerStaff, null, values);
+            if (db.isOpen())
+            {
+                //db.close();
+
+            }
+            return (int)id;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    // Getting single contact
+    public  StaffFingerInfo FingerStaffByIdGet(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor =null;
+        try {
+            cursor = db.query(TABLE_FingerStaff, null, KEY_FingerSId + "=?",
+                    new String[] { String.valueOf(id) }, null, null, null);
+            if (cursor != null)
+            {
+                cursor.moveToFirst();
+
+                StaffFingerInfo contact =FingerStaffParse(cursor);
+                // return contact
+                return contact;
+            }
+            return null;
+        } finally {
+            //db.close();
+            if (cursor !=null) {
+                cursor.close();
+            }
+        }
+    }
+
+    public  StaffFingerInfo FingerStaffByStaffIdGet(int StaffId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_FingerStaff, null,  KEY_FingerStaffId + "=?",
+                new String[] { String.valueOf(StaffId) }, null, null, null);
+        if (cursor != null)
+        {
+            cursor.moveToFirst();
+            if (cursor.getCount()>0) {
+                StaffFingerInfo contact =FingerStaffParse(cursor);
+                // return contact
+                cursor.close();
+                return contact;
+            }
+        }
+        return null;
+
+    }
+
+    private StaffFingerInfo FingerStaffParse(Cursor cursor) {
+
+        StaffFingerInfo SmartGuyInfo = new StaffFingerInfo();
+
+        SmartGuyInfo.setId(cursor.getInt(cursor.getColumnIndex(KEY_FingerSId)));
+        SmartGuyInfo.setStaffId(cursor.getInt(cursor.getColumnIndex(KEY_FingerStaffId)));
+        SmartGuyInfo.setRFIndex(cursor.getBlob(cursor.getColumnIndex(KEY_RFIndex)));
+        SmartGuyInfo.setRFThumb(cursor.getBlob(cursor.getColumnIndex(KEY_RFThumb)));
+        SmartGuyInfo.setLFIndex(cursor.getBlob(cursor.getColumnIndex(KEY_LFIndex)));
+        SmartGuyInfo.setLFThumb(cursor.getBlob(cursor.getColumnIndex(KEY_LFThumb)));
+        SmartGuyInfo.setDateCreated(cursor.getString(cursor.getColumnIndex(KEY_DateCreated)));
+        return SmartGuyInfo;
+
+    }
+    // Getting All Contacts
+    public List<StaffFingerInfo> FingerStaffList() {
+        List<StaffFingerInfo> contactList = new ArrayList<StaffFingerInfo>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_FingerStaff + "";
+        //
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor !=null) {
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    StaffFingerInfo contact =FingerStaffParse(cursor);
+                    // Adding contact to list
+                    contactList.add(contact);
+                } while (cursor.moveToNext());
+                cursor.close();
+            }
+
+        }
+
+        // return contact list
+        return contactList;
+    }
+
+    // Updating single contact
+    public int FingerStaffUpdate(StaffFingerInfo sdInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        //values.put(KEY_FingerSId, sdInfo.getId());
+        values.put(KEY_FingerStaffId, sdInfo.getStaffId()); // StudentAttendanceInfo Name
+        values.put(KEY_RFThumb, sdInfo.getRFThumb()); // StudentAttendanceInfo Name
+        values.put(KEY_RFIndex, sdInfo.getRFIndex()); //
+
+        values.put(KEY_LFThumb, sdInfo.getLFThumb()); // StudentAttendanceInfo Name
+        values.put(KEY_LFIndex, sdInfo.getLFIndex()); //
+        values.put(KEY_DateCreated, sdInfo.getDateCreated().toString()); //
+        // updating row
+        return db.update(TABLE_FingerStaff, values, KEY_FingerSId + " = ?",
+                new String[] { String.valueOf(sdInfo.getId()) });
+    }
+
+    // Deleting single contact
+    public void FingerStaffDelete(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_FingerStaff, KEY_FingerSId + " = ?",
+                new String[] { String.valueOf(id) });
+        //db.close();
+    }
+
+    // Getting contacts Count
+    public int FingerStaffCount() {
+        String countQuery = "SELECT  Count(*) FROM " + TABLE_FingerStaff;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        int cnt=cursor.getInt(0);
+        cursor.close();
+
+        // return count
+        return cnt;
+    }
+
+
+
+
 }
 

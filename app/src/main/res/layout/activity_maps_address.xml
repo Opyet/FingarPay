@@ -7,7 +7,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MapsAddressActivity"
-    />
+    >
+<android.support.v7.widget.LinearLayoutCompat
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:paddingLeft="20dp"
+android:paddingRight="20dp"
+android:layout_centerInParent="true"
+android:orientation="vertical"
+android:background="@android:color/darker_gray"
+android:animateLayoutChanges="true"
+android:alpha="0.9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm the Address Shown here."/>
+<EditText
+
+    android:id="@+id/txtCurrentAddress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|center_horizontal"
+    android:hint="Your Business Address"
+    android:inputType="textMultiLine"
+    android:lines="3"
+    android:minLines="6"
+    android:gravity="top|left"
+    android:maxLines="10"
+    android:scrollbars="vertical"
+    android:textAlignment="center"
+    android:textColor="@color/bgGrey"
+    android:textSize="12dp"
+    android:textStyle="normal"
+    android:enabled="false"
+    android:focusable="false"
+    >
+
+    <requestFocus />
+</EditText>
+
+</android.support.v7.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:id="@+id/relative1Layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        >
 
 
+        <View
+            android:id="@+id/hlcr"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_above="@+id/bttnContinue"
+            />
+        <Button
+            android:id="@+id/bttnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:textStyle="normal"
+            android:layout_alignParentBottom="true"/>
 
+    </RelativeLayout>
+</fragment>

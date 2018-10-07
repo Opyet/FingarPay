@@ -578,13 +578,13 @@ public class DataAccessMethods {
 	}
 
 
-	public BVNSearchInfo BVNSearch(String bvn)
+	public BVNSearchInfo BVNSearchQuick(String... args)
 	{
 
 		try {
 			SoapObject request = new SoapObject(UtilityHelper.NAMESPACE, UtilityHelper.METHOD_NAME_BVNSearch);
 			//String RegNo, int CampusGistId, Boolean isLiked
-			request.addProperty("BVN", bvn);
+			request.addProperty("BVN", args[0].toString());
 
 			SoapSerializationEnvelope envelope =
 					new SoapSerializationEnvelope(SoapEnvelope.VER11);
@@ -613,10 +613,10 @@ public class DataAccessMethods {
 				int cnt=ks.getPropertyCount();
 				Log.i("Counter", String.valueOf(cnt));
 				//ArrayList<BVNSearchInfo> addSchProg=new ArrayList<BVNSearchInfo>();
-				for(int i=0;i<ks.getPropertyCount();i++)
-				{
+
 					BVNSearchInfo spInfo=new BVNSearchInfo();
-					SoapObject rs4=(SoapObject)  ks.getProperty(i);
+					SoapObject rs4 = (SoapObject)envelope.getResponse();
+
 					spInfo.setEmail((rs4.getProperty("Email").toString().replace("anyType{}", "")));
 					spInfo.setBVN((rs4.getProperty("BVN").toString().replace("anyType{}", "")));
 					spInfo.setBase64Image((rs4.getProperty("Base64Image").toString().replace("anyType{}", "")));
@@ -628,7 +628,7 @@ public class DataAccessMethods {
 					//addSchProg.add(spInfo);
 					return spInfo;
 					//break;
-				}
+
 				//return addSchProg;
 				// Toast.makeText(getApplicationContext(),resultString.toString(), Toast.LENGTH_LONG).show();
 			}
